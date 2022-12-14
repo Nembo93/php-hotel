@@ -59,7 +59,6 @@
     <header>
         <h1>I nostri Hotels</h1>
     </header>
-    <!-- Stampa in un listato gli hotel dell'array con le info -->
 
     <main>
         <div class="disp_flex">
@@ -80,6 +79,8 @@
             </div>
         </div>
 
+        <!-- Crea un ciclo per stampare in una tabella le info degli hotel -->
+        <!-- Inserisci ne ciclo una condizione che se verificata stampa le info  -->
         <?php 
             foreach ($hotels as $hotel){?>
                 <div class="disp_flex">
@@ -95,7 +96,14 @@
                     </div>
                     <div class="cell_parking">
                         <h4>
-                            <?php echo $hotel["parking"] ?>
+                            <?php 
+                                if ($hotel["parking"]){?>
+                                    SI
+                                <?}
+                                else {?>
+                                    NO
+                                <?}
+                            ?>
                         </h4>
                     </div>
                     <div class="cell_vote">
