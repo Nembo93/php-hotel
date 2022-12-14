@@ -41,8 +41,9 @@
     ];
 
     // var_dump($hotels);
-    $parking_search = false;
+    $parking_search = "";
 
+    $prova = $_POST[`parking_select`];
 ?>
 
 
@@ -60,6 +61,16 @@
     
     <header>
         <h1>I nostri Hotels</h1>
+
+        <!-- Form per filtro parcheggio -->
+        <form action="index.php" method="post">
+
+            <select name="parking_select" >
+                <option value="false">Tutti</option>
+                <option value="true">Con parcheggio</option>
+            </select>
+            <button type="submit">Filtra ricerca</button>
+        </form>
     </header>
 
     <main>
