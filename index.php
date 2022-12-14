@@ -40,6 +40,7 @@
 
     ];
 
+    var_dump($hotels);
 ?>
 
 
@@ -54,5 +55,23 @@
 </head>
 <body>
     
+    <!-- Stampa in un listato gli hotel dell'array con le info -->
+    <?php 
+        foreach ($hotels as $hotel){?>
+            <ul>
+                <?php 
+                    foreach ($hotel as $info){?>
+                        <li>
+                            <?php echo $info ?>
+                        </li>
+                    <?}
+                ?>
+            </ul>
+
+
+            <!-- <p>Hotel: <?php echo $hotel["name"]  ?></p> -->
+        <?}
+    ?>
+
 </body>
 </html>
