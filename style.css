@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    text-align: center;
+}
+
+
+
+
+
+/* Common class */
+.disp_flex{
+    display: flex;
+}
+
+
+.cell_name{
+    width: 200px;
+    background-color: red;
+}
+.cell_desc{
+    width: 400px;
+    background-color: green;
+}
+.cell_parking{
+    width: 100px;
+    background-color: yellow;
+}
+.cell_vote{
+    width: 100px;
+    background-color: lightblue;
+}
+.cell_distance{
+    width: 200px;
+    background-color: lightcoral;
+}
