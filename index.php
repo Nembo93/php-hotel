@@ -41,7 +41,8 @@
     ];
 
     // var_dump($hotels);
-    $parking_search = "true";
+    $parking_search = false;
+
 ?>
 
 
@@ -168,7 +169,7 @@
                         <?}    
                     } 
                 }
-                
+
         ?>
     </main>
     
