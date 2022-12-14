@@ -41,6 +41,7 @@
     ];
 
     // var_dump($hotels);
+    $parking_search = "true";
 ?>
 
 
@@ -82,42 +83,92 @@
         <!-- Crea un ciclo per stampare in una tabella le info degli hotel -->
         <!-- Inserisci ne ciclo una condizione che se verificata stampa le info  -->
         <?php 
-            foreach ($hotels as $hotel){?>
-                <div class="disp_flex">
-                    <div class="cell_name">
-                        <h3>
-                            <?php echo $hotel["name"] ?>
-                        </h3>
+            
+            if ($parking_search == false){
+                    
+                foreach ($hotels as $hotel){?>
+
+                    <div class="disp_flex">
+                        <div class="cell_name">
+                            <h3>
+                                <?php echo $hotel["name"] ?>
+                            </h3>
+                        </div>
+                        <div class="cell_desc">
+                            <h4>
+                                <?php echo $hotel["description"] ?>
+                            </h4>
+                        </div>
+                        <div class="cell_parking">
+                            <h4>
+                                <!-- Condizione per stampare parcheggio presente o no -->
+                                <?php 
+                                    if ($hotel["parking"]){?>
+                                        SI
+                                    <?}
+                                    else {?>
+                                        NO
+                                    <?}
+                                ?>
+                            </h4>
+                        </div>
+                        <div class="cell_vote">
+                            <h4>
+                                <?php echo $hotel["vote"] ?>
+                            </h4>
+                        </div>
+                        <div class="cell_distance">
+                            <h4>
+                                <?php echo $hotel["distance_to_center"] ?>
+                            </h4>
+                        </div>
                     </div>
-                    <div class="cell_desc">
-                        <h4>
-                            <?php echo $hotel["description"] ?>
-                        </h4>
-                    </div>
-                    <div class="cell_parking">
-                        <h4>
-                            <?php 
-                                if ($hotel["parking"]){?>
-                                    SI
-                                <?}
-                                else {?>
-                                    NO
-                                <?}
-                            ?>
-                        </h4>
-                    </div>
-                    <div class="cell_vote">
-                        <h4>
-                            <?php echo $hotel["vote"] ?>
-                        </h4>
-                    </div>
-                    <div class="cell_distance">
-                        <h4>
-                            <?php echo $hotel["distance_to_center"] ?>
-                        </h4>
-                    </div>
-                </div>
-            <?}
+
+                <?}  
+            }   else{
+                    foreach ($hotels as $hotel){
+                        
+                        if ($hotel["parking"] == true){?>
+
+                            <div class="disp_flex">
+                                <div class="cell_name">
+                                    <h3>
+                                        <?php echo $hotel["name"] ?>
+                                    </h3>
+                                </div>
+                                <div class="cell_desc">
+                                    <h4>
+                                        <?php echo $hotel["description"] ?>
+                                    </h4>
+                                </div>
+                                <div class="cell_parking">
+                                    <h4>
+                                        <!-- Condizione per stampare parcheggio presente o no -->
+                                        <?php 
+                                            if ($hotel["parking"]){?>
+                                                SI
+                                            <?}
+                                            else {?>
+                                                NO
+                                            <?}
+                                        ?>
+                                    </h4>
+                                </div>
+                                <div class="cell_vote">
+                                    <h4>
+                                        <?php echo $hotel["vote"] ?>
+                                    </h4>
+                                </div>
+                                <div class="cell_distance">
+                                    <h4>
+                                        <?php echo $hotel["distance_to_center"] ?>
+                                    </h4>
+                                </div>
+                            </div>
+                        <?}    
+                    } 
+                }
+                
         ?>
     </main>
     
